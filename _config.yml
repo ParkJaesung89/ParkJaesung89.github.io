@@ -2,10 +2,30 @@ title: ParkJaesung Tech Blog
 description: jaesung's tech blog!
 theme: just-the-docs
 
+#my github address
 url: https://github.com/ParkJaesung89/ParkJaesung89.github.io.git
 
+#my github address
 aux_links:
   Template Repository: https://github.com/ParkJaesung89/ParkJaesung89.github.io.git
 
-plugins:
-  - jekyll-default-layout
+#Footer "Edit this page on Github" link text
+gh_edit_link: true   # show or hide edit this page link
+gh_edit_link_text: "Edit this page on Github"
+gh_edit_repository: "https://github.com/ParkJaesung89/ParkJaesung89.github.io"
+
+#Site Search Function
+search_enabled: true
+
+search:
+  heading_level: 2
+  previews: 3
+  preview_words_before: 5
+  preview_words_after: 10
+  tokenizer_separator: /[\s/]+/
+  rel_url: true
+  button: false
+
+#color chois
+color_schema: nil
+# dark / light_nil
