@@ -6,13 +6,12 @@ description: "Hello world"
 permalink: /
 ---
 
-# Welcome to github.io
+# Welcome to My Github.io
 {: .fs-8}
 
 Github Description
 {: .fs-6 .fw-300}
-
-[Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } [View it on GitHub](https://github.com/ParkJaesung89/ParkJaesung89.github.io){: .btn .fs-5 .mb-4 .mb-md-0 }
+[View it on GitHub](https://github.com/ParkJaesung89/ParkJaesung89.github.io){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
 Getting started
