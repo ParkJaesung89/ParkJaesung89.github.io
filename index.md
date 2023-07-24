@@ -8,9 +8,7 @@ permalink: /
 
 # Welcome to My Github.io
 {: .fs-8}
-
-Github Description
-{: .fs-6 .fw-300}
+[url link]
 [View it on GitHub](https://github.com/ParkJaesung89/ParkJaesung89.github.io){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
