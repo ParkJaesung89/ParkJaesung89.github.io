@@ -10,6 +10,7 @@ permalink: /
 {: .fs-8}
 
 안녕~!
+![img](deadpool.jpeg)
 
 ---
 [github 방문하기]
