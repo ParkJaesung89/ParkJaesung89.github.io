@@ -1,9 +1,0 @@
----
-layout: default
-title: Ansible
-nav_order: 2
-description: "Hello world"
-permalink: /
----
-
-# 안녕 Ansible?
