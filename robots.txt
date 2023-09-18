@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://parkjaesung89.github.io
