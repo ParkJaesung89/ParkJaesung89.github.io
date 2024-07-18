@@ -106,25 +106,27 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 ## Terraform pipeline 구성 작업
 
 1. Jenkins 관리 > Plugins 에서 "terraform" 을 검색 후 install
-   ![terraform plugins search]()
-   ![terraform plugins install]()
+   ![terraform plugins search](../assets/img/github_Jenkins_terraform_CICD/0_1.%20jenkins%20plugin.png)
+   ![terraform plugins install](../assets/img/github_Jenkins_terraform_CICD/1.%20install%20jenkins%20terraform%20plugin.png)
 
 2. github에서 인증을 위한 token 생성 후 Jenkins New credentails에서 github 접근 정보 및 token값 저장
-   ![create new credentials]()
+   => Github 오른쪽 프로필 선택 > Settings > Developer settings > Personal access tokens > tokens (classic)
+   ![create new credentials](../assets/img/github_Jenkins_terraform_CICD/10.%20github_token%20생성.png)
 
 3. Pipeline 생성
    new item > pipeline 선택
-   ![create new item]()
 
 - General 설정에서 "Github project"를 체크하고 Project url을 작성
-  ![Configure_1]()
+  ![create new item](../assets/img/github_Jenkins_terraform_CICD/4.%20pipeline%20생성.png)
+
+  ![Configure_1](../assets/img/github_Jenkins_terraform_CICD/4_1.%20github_repo%20설정.png)
 
 - Pipeline 연동을 위한 설정 값 작성
   Github를 webhook 통하여 변경된 부분을 체크하여 Jenkinsfile에 미리 작성된 액션을 수행하도록 하기위하여 아래와 같이 작성한다.
-  ![Configure_2]()
+  ![Configure_2](../assets/img/github_Jenkins_terraform_CICD/4_2.%20github_repo%20설정.png)
 
 4. github 웹훅 설정
 
 - github에서 jenkins와의 웹훅 연동을 한다. 이 설정이 없으면 jenkins에서 생성한 pipeline이 동작하지 않는다.
-  ![github_jenkins webhook_1]()
-  ![github_jenkins webhook_2]()
+  ![github_webhook_configure](../assets/img/github_Jenkins_terraform_CICD/5_1.%20github_jenkins_webhook%20설정%20및%20연결%20완료.png)
+  ![github_webhook_OK](../assets/img/github_Jenkins_terraform_CICD/5.%20github_jenkins_webhook%20설정%20및%20연결%20완료.png)
