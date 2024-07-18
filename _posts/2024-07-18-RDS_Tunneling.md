@@ -5,7 +5,6 @@ categories: [AWS, Tunnel]
 tags: [putty, DBever]
 ---
 
-ㅅㄱ
 AWS 환경에서 bastion을 통해서 private subnet에 존재하는 RDS에 접근할 경우가 있다.
 bastion에 직접 들어가서 cli로 db에 접근할 수도 있겠지만 사용이 불현하다.
 이럴 경우, SSH Tunneling을 이용해서 로컬에서 bastion을 통해 RDS로 바로 붙을 수 있다.
