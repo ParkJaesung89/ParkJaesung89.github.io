@@ -2,13 +2,14 @@
 title: rocky8 취약점 조치 script
 date: 2024-03-21 16:50:00 +09:00
 categories: [ISMS, rocky8 취약점 조치 스크립트]
-tags: [rocky8, ISMS]     # TAG names should always be lowercase
+tags: [rocky8, ISMS] # TAG names should always be lowercase
 ---
 
 # Rocky8 의 취약점 조치 스크립트 작성
+
 프로젝트 건으로 약 400대의 서버를 마이그레이션 해야되는 상황이 발생하여 모든 서버에 적용할 프로비저닝 작업이 필요했습니다.  
 모든 서버에 적용할 기본적인 취약점 조치 및 파라미터 값 수정에 대하여 스크립트 작성하였습니다.  
-*아래 스크립트는 상황에 따라 다를 수 있으니 참고만 하시면 됩니다.*  
+_아래 스크립트는 상황에 따라 다를 수 있으니 참고만 하시면 됩니다._
 
 ```bash
 #!/bin/bash
@@ -129,7 +130,7 @@ account     sufficient                                   pam_localuser.so
 account     sufficient                                   pam_usertype.so issystem
 account     [default=bad success=ok user_unknown=ignore] pam_sss.so
 account     required                                     pam_permit.so
-password    requisite                                    pam_pwquality.so try_first_pass local_users_only
+password    requisite                                    pam_pwquality.so try_first_pass local_users_only       # 루트도 적용시 enforce_for_root
 password    sufficient                                   pam_unix.so sha512 shadow nullok try_first_pass use_authtok
 password    sufficient                                   pam_sss.so use_authtok
 password    required                                     pam_deny.so
