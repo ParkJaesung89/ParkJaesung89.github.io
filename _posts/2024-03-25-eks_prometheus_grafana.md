@@ -1,5 +1,5 @@
 ---
-title: EKS 환경에서 Prometheus+Grafana+Thanos 구성
+title: EKS 환경에서 Prometheus+Grafana+Thanos 구성(수정중)
 date: 2024-03-25 12:45:00 +09:00
 categories: [AWS, EKS]
 tags: [EKS, Prometheus] # TAG names should always be lowercase

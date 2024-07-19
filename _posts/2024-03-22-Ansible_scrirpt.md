@@ -1,17 +1,18 @@
 ---
-title: Ansible을 활용한 취약점 점검 실행 및 결과파일 취합 script
+title: Ansible을 활용한 취약점 점검 실행 및 결과파일 취합 script(수정중)
 date: 2024-03-22 01:45:00 +09:00
 categories: [Ansible, ISMS]
-tags: [Ansible, ISMS]     # TAG names should always be lowercase
+tags: [Ansible, ISMS] # TAG names should always be lowercase
 ---
 
-
 회사 ISMS 담당자-리눅스 파트로 일을 수행하기 시작하고 처음 취약점 점검을 위하여 취약점 점검 스크립트를 구동하여야 했으나, 현재까지 200~300대 정도의 서버들에 대해서 전부 일일이 들어가서 작업을 하고 있었습니다. 파일을 수집하는데 모든 서버에서 수동으로 돌려서 빼야되는 번거로움과 시간을 절약하기 위한 목적으로 ansible을 통한 자동화를 구성하기로 하였습니다.
-  
-지금부터 ansible을 활용한 리눅스의 취약점 점검 스크립트 및 결과파일 취합하는 방법에 대해서 알아보겠습니다.  
+
+지금부터 ansible을 활용한 리눅스의 취약점 점검 스크립트 및 결과파일 취합하는 방법에 대해서 알아보겠습니다.
 
 ## 사전에 필요 한 구성
+
 1. Master서버 hostway 계정에서 Node 서버의 ansible과 ssh-key 교환 및 hosts 설정
+
    ```bash
    #Hosts 등록
    $cat /etc/hosts
@@ -19,7 +20,7 @@ tags: [Ansible, ISMS]     # TAG names should always be lowercase
    x.x.x.x node2
    .
    .
-   
+
    #키 교환 작업
    $ssh-keygen
    $ssh-copy-id ansible@{node명}       # 예) ssh-copy-id ansible@node1
@@ -28,39 +29,41 @@ tags: [Ansible, ISMS]     # TAG names should always be lowercase
 2. 서버들 안에 필요한 폴더 생성
 
 [master server]
-  1) 특정 경로로 폴더 생성
-     ```bash
-     $mkdir /home/hostway/isms/   
-     $mkdir /home/hostway/isms/check
-     ```
-  2) /home/hostway/isms/ 경로에 스크립트 파일 넣기
-     ```bash
-     $ll -alh /home/hostway/isms/ | awk '{print $9}'
-     Debian_v3.0.sh
-     Linux_CentOS_v5.0_221129.sh
-     ```
+
+1. 특정 경로로 폴더 생성
+   ```bash
+   $mkdir /home/hostway/isms/
+   $mkdir /home/hostway/isms/check
+   ```
+2. /home/hostway/isms/ 경로에 스크립트 파일 넣기
+   ```bash
+   $ll -alh /home/hostway/isms/ | awk '{print $9}'
+   Debian_v3.0.sh
+   Linux_CentOS_v5.0_221129.sh
+   ```
 
 [node server]
-  1) "ansible" user 계정 생성
-     ```bash
-     $adduser ansible
-     ```
-  2) /home/ansible 디렉토리 필요
-     ```bash
-     $ls /home | grep ansible
-     ansible
-     ```
 
+1. "ansible" user 계정 생성
+   ```bash
+   $adduser ansible
+   ```
+2. /home/ansible 디렉토리 필요
+   ```bash
+   $ls /home | grep ansible
+   ansible
+   ```
 
 ## Master Server의 Inventory 작성
+
 ```bash
 [nodes]
 node1           ansible_host=node1 ansible_user=ansible
 #노드 명         hostname             접속할 user명
 ```
 
-
 ## playbook 존재하는 파일은 총 3개, script 파일
+
 경로 : /home/hostway/playbook/jsp/
 
 ```bash
@@ -69,15 +72,16 @@ node1           ansible_host=node1 ansible_user=ansible
 3) copy_fetch_Debian.yaml  # Debian server에 대한 취약점 점검 스크립트 수행 및 Master server로 결과파일 전달
 ```
 
-
 ## 동작 구조
-1. ISMS_Script_Check.yaml 파일 동작 -> OS의 종류 체크
-                                      [ CentOS or Rocky냐 ]  => copy_fetch_CentOS.yaml
-                                      [ Ubuntu 냐 ] => copy_fetch_Debian.yaml
 
+1. ISMS_Script_Check.yaml 파일 동작 -> OS의 종류 체크
+   [ CentOS or Rocky냐 ] => copy_fetch_CentOS.yaml
+   [ Ubuntu 냐 ] => copy_fetch_Debian.yaml
 
 ## 파일 내용
-1) ISMS_Script_Check.yaml
+
+1. ISMS_Script_Check.yaml
+
 ```bash
 ---
 - name: OS_Check_Include_Tasks                        # tasks 윗 부분들은 글로벌 설정
@@ -101,8 +105,8 @@ node1           ansible_host=node1 ansible_user=ansible
 
 ```
 
+2. copy_fetch_CentOS.yaml
 
-2) copy_fetch_CentOS.yaml
 ```bash
 
 ---
@@ -140,8 +144,8 @@ node1           ansible_host=node1 ansible_user=ansible
 
 ```
 
+3. copy_fetch_Debian.yaml
 
-3) copy_fetch_Debian.yaml
 ```bash
 
 ---

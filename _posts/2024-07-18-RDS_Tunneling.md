@@ -28,9 +28,9 @@ bastion에 직접 들어가서 cli로 db에 접근할 수도 있겠지만 사용
 
 ## [연결 방법]
 
-1. putty로 Bastion 서버에 SSh 접속
+1. putty로 Bastion 서버에 SSh 접속  
    ![putty_ssh](../assets/img/posts_img/RDS_Tunneling/putty%20ssh.png)
-2. 접속 후 왼쪽 상단에 이미지 클릭하여 Change Settins 선택
+2. 접속 후 왼쪽 상단에 이미지 클릭하여 Change Settins 선택  
    ![putty_tunneling](../assets/img/posts_img/RDS_Tunneling/putty%20tunneling.png)
 3. Tunneling 설정
    1. Source port : Local PC의 tunneling할 Port
@@ -45,6 +45,6 @@ bastion에 직접 들어가서 cli로 db에 접근할 수도 있겠지만 사용
    \*_DB 접속 툴은 각자 편한걸로 진행_
    - Tunneling이 되있기 때문에 rds의 실제 경로 및 port를 적는게 아니라 현재 local PC에서의 매핑된 정보를 입력해야됨.
    1. Server Host : 127.0.0.1(localhost)
-   2. Port : Local pc에서 사용하는 Port
-      ![rds 접근1](../assets/img/posts_img/RDS_Tunneling/rds%20접근1.png)
+   2. Port : Local pc에서 사용하는 Port  
+      ![rds 접근1](../assets/img/posts_img/RDS_Tunneling/rds%20접근1.png)  
       ![rds 접근1](../assets/img/posts_img/RDS_Tunneling/rds%20접근2.png)
