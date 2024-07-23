@@ -1,7 +1,7 @@
 ---
 title: Github 활용한 Jekyll thema 블로그 만들기(업데이트 중)
 date: 2023-09-18 17:23:00 +/-0000
-categories: [home]
+categories: [blog]
 tags: [hello world] # TAG names should always be lowercase
 ---
 
