@@ -1,5 +1,5 @@
 ---
-title: 메모리 분석을 통한 Tomcat 성능 튜닝(수정중)
+title: Tomcat 성능 튜닝을 위한 메모리 분석
 date: 2024-06-25 11:30:00 +09:00
 categories: [Tomcat, memory]
 tags: [tomcat, heap, memory]
