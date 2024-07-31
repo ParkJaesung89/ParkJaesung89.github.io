@@ -5,8 +5,6 @@ categories: [CICD, jenkins]
 tags: [jenkins, github] # TAG names should always be lowercase
 ---
 
-# Jenkis활용한 Terraform pipeline 구성
-
 ## docker 설치
 
 ### docker의 apt repo 셋업
