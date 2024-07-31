@@ -158,13 +158,3 @@ background-image: url('/assets/img/sidebar-bg-img.jpg'); # 사용하고 싶은 �
 background-size: cover;  # 이미지의 size가 보여질 부분의 사이즈와 다른 경우에는 이미지 크기를 꽉차게 만든다
 background-repeat: no-repeat; # 이미지의 size가 보여질 부분의 사이즈와 다른 경우 이미지가 반복하여 나오는데, 반복하지 않겠다.
 ```
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EHV6RERMBE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-EHV6RERMBE');
-</script>
