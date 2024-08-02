@@ -1,6 +1,6 @@
 ---
 title: AWS IAM Roles Anywhere
-date: 2023-09-18 17:23:00 +/-0000
+date: 2024-08-02 18:23:00 +/-0000
 categories: [aws, iam]
 tags: [IAM_Roles_Anywhere] # TAG names should always be lowercase
 ---
