@@ -375,7 +375,19 @@ $aws sts get-caller-identity --profile roles-anywhere
 }
 ```
 
-##### Certificate Revocation(인증서 폐기)
+제대로 프로파일로 awscli가 동작되는지 확인해봅시다.
+
+```bash
+$aws s3 ls --profile roles-anywhere
+
+2022-12-22 12:18:49 aws-cloudtrail-logs-xxxxxxxxxxxx-xxxxxxxx
+2024-01-10 10:49:04 aws-cloudtrail-logs-xxxxxxxxxxxx-xxxxxxxx
+2023-12-15 16:08:14 jsp-test-s3-bucket
+```
+
+##### _위의 방법을 사용하지 않고 Root CA를 AWS의 Private CA를 이용하여 구성시 알아야 될 지식_
+
+Certificate Revocation(인증서 폐기)
 
 단기 인증서의 경우에는 몇 시간 또는 며칠이면 자동 만료되기 때문에 폐기 할 필요가 없습니다.
 그러나 그 외에는 앤드포인트에서 발급된 인증서를 더 이상 신뢰하지 않기 위하여 인증서를 폐기하는 방법이 필요합니다.
