@@ -71,11 +71,11 @@ heap 영역은 JVM(Java Virtual Machine)이 런타임 동안 생성하는 객체
 
 우선 JVM이 무엇인지 부터 알아야됩니다.
 JVM이란 Java Virtual Machine로 자바의 가상머신입니다. java의 바이트 코드를 해석하고 실행하는 역할을 수행합니다.
-Java 프로그램은 JVM이란 가상머신안에서 동작하기 때문에 운영체제 상관없이 JAVA를 동작 시킬 수 있다.
+Java 프로그램은 JVM이란 가상머신안에서 동작하기 때문에 운영체제 상관없이 JAVA를 동작 시킬 수 있습니다.
 
 ## java의 다이어그램
 
-자바 프로그램이 동작하는 과정을 다이어그램으로 살펴보겠습니다.
+자바 프로그램이 동작하는 과정을 다이어그램으로 살펴보겠습니다.  
 ![java_diagram](../assets/img/posts_img/tomcat_error/java_diagram.png)
 
 1. 개발자가 자바 소스를 작성하여 저장하면 우선 '.java' 라는 파일로 저장합니다.
